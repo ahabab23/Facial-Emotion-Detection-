@@ -87,7 +87,6 @@ def app():
 
 
 def model_summary():
-    st.markdown("**:blue[Github:]** https://github.com/ahabab23/Facial-Emotion-Detection-")
     st.title("Model Summary")
     st.write("This section provides an overview of the emotion prediction model.")
     set_bg_hack("background_img3.jpg")
@@ -373,5 +372,4 @@ if selection=="Model Summary":
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Contact Information")
 st.sidebar.markdown("For inquiries, please contact uwess529300@gmail.com")
-st.sidebar.markdown(("For reference,Github repository:https://github.com/ahabab23/Facial-Emotion-Detection-"))
 st.sidebar.markdown("© 2024 Emotion Prediction App")
