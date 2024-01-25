@@ -12,8 +12,8 @@ import warnings
 warnings.filterwarnings("ignore")
 
 st.set_page_config(
-    page_title="Human Emotions",
-    page_icon="random",
+    page_title="Face Emotions Detection",
+    page_icon=":angry:",
     initial_sidebar_state="expanded",
 )
 
@@ -70,7 +70,7 @@ def home():
 def app():
     st.title("App")
 
-    set_bg_hack("background_img.jpg")
+    set_bg_hack("background_img3.jpg")
     # side_bg = 'background_img2.jpg'
     # sidebar_bg(side_bg)
 
@@ -89,7 +89,7 @@ def app():
 def model_summary():
     st.title("Model Summary")
     st.write("This section provides an overview of the emotion prediction model.")
-    set_bg_hack("background_img.jpg")
+    set_bg_hack("background_img3.jpg")
 
 
 # Navigation bar
@@ -123,11 +123,12 @@ if selection == "App":
     side_bg = 'background_img2.jpg'
     sidebar_bg(side_bg)
     st.subheader("Emotion Prediction App")
-    capture_method = st.sidebar.radio("Face Capture Method", ("Face Upload", "Camera Capture"))
+    st.write("Please capture or upload the image you want to analyze for facial emotions in the sidebar. ")
+    capture_method = st.sidebar.radio("**:violet[Face Capture Method]**", ("Face Upload", "Camera Capture"))
     face_image = None
 
     if capture_method == "Face Upload":
-        face_image = st.sidebar.file_uploader("Upload Face Image", type=['jpg', 'jpeg'])
+        face_image = st.sidebar.file_uploader("**Upload Face Image**", type=['jpg', 'jpeg'])
     elif capture_method == "Camera Capture":
         face_image = st.sidebar.camera_input("Capture Face")
 
@@ -195,8 +196,6 @@ if selection=="Model Summary":
 
     st.subheader("Proposed Solution:")
     st.markdown("- Let's delve into the details of the model.")
-
-    st.header("Model Summary")
     st.subheader("Model Objectives:")
     st.markdown(
         "- Develop a machine learning model to recognize human emotions (angry, sad, and happy) from facial images."
@@ -345,12 +344,12 @@ if selection=="Model Summary":
         st.write("The model has achieved the lowest loss of 1% on training dataset")
         st.write("The model has achieved the lowest validation loss  of 25% on validation dataset")
 
-
+    st.write("From the Visualisations the best performing model is Hugging Face Vit")
     st.subheader("Testing:")
-    st.write("The model was tested with 16 images from the validation dataset.")
+    st.write("The model was tested with 16 images from the validation dataset using Hugging Face Model.")
     st.write("Results achieved:")
     st.image("images/Testing.png")
-    st.write("Out of 16 images the model has made a wrong prediction in one ocasssion")
+    st.write("Out of 16 images the model has made a wrong prediction in one occasion")
 
     st.subheader("Confusion Matrix:")
     st.write(
