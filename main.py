@@ -87,6 +87,7 @@ def app():
 
 
 def model_summary():
+    st.markdown("**:blue[Github:]** https://github.com/ahabab23/Facial-Emotion-Detection-")
     st.title("Model Summary")
     st.write("This section provides an overview of the emotion prediction model.")
     set_bg_hack("background_img3.jpg")
@@ -144,15 +145,18 @@ if selection == "App":
         emotion = CONFIGURATION['CLASS_NAMES'][predictions]
 
         # Display emotion and confidence score
-        st.warning(f"Human Emotion: {emotion}")
-        st.warning(f"Confidence score: {confidence_score}%")
+
 
         # Advice and Suggestions based on predicted emotion
 
         if emotion == "sad":
+            st.warning(f"Human Emotion: {emotion}")
+            st.warning(f"Confidence score: {confidence_score}%")
             st.markdown("#### Advice")
             st.info("Remember that it's okay to feel sad sometimes. Reach out to friends or loved ones for support.")
         elif emotion == "angry":
+            st.warning(f"Human Emotion: {emotion}")
+            st.warning(f"Confidence score: {confidence_score}%")
             st.markdown("#### Advice")
             st.info("Take a deep breath. It's okay to feel angry, but finding healthy ways to express it can make a difference.")
 
@@ -164,11 +168,15 @@ if selection == "App":
 
         # Additional messages for the "happy" emotion
         if emotion == "happy":
+            st.success(f"Human Emotion: {emotion}")
+            st.success(f"Confidence score: {confidence_score}%")
             st.balloons()
             st.success("You're feeling happy! Celebrate the moment and spread positivity.")
 
         # Additional messages for the "nothing" emotion
         elif emotion == "nothing":
+            st.error(f"Human Emotion: {emotion}")
+            st.error(f"Confidence score: {confidence_score}%")
             st.error("Could not detect a human face. Please upload a clear image.")
 if selection=="Model Summary":
     st.header("Emotion Recognition from Face Image")
@@ -365,4 +373,5 @@ if selection=="Model Summary":
 st.sidebar.markdown("---")
 st.sidebar.markdown("### Contact Information")
 st.sidebar.markdown("For inquiries, please contact uwess529300@gmail.com")
+st.sidebar.markdown(("For reference,Github repository:https://github.com/ahabab23/Facial-Emotion-Detection-"))
 st.sidebar.markdown("© 2024 Emotion Prediction App")
