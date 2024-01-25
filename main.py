@@ -17,13 +17,12 @@ st.set_page_config(
     initial_sidebar_state="expanded",
 )
 
+@st.cache_resource
+def loading_model():
+  my_model=tf.keras.models.load_model("my_model")
+  return my_model
 
-
-def load_model():
-  model=tf.keras.models.load_model("my_model")
-  return model
-
-model=load_model()
+model=loading_model()
 
 # ###Background images
 def set_bg_hack(main_bg):
@@ -136,7 +135,6 @@ if selection == "App":
 
     if face_image:
         st.image(face_image)
-
         # Replace this with your actual prediction function
         predictions = tf.argmax(prediction(face_image), axis=-1).numpy()[0]
         confidence_score = tf.reduce_max(tf.reshape(prediction(face_image), (-1,))).numpy() * 100
