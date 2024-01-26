@@ -120,8 +120,8 @@ def prediction(image_data):
 # selection=st.sidebar.selectbox("",options=values)
 
 if selection == "App":
-    side_bg = 'background_img2.jpg'
-    sidebar_bg(side_bg)
+    # side_bg = ''
+    # sidebar_bg(side_bg)
     st.subheader("Emotion Prediction App")
     st.write("Please capture or upload the image you want to analyze for facial emotions in the sidebar. ")
     capture_method = st.sidebar.radio("**:violet[Face Capture Method]**", ("Face Upload", "Camera Capture"))
