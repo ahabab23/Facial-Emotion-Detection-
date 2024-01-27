@@ -14,7 +14,7 @@ warnings.filterwarnings("ignore")
 st.set_page_config(
     page_title="Face Emotions Detection",
     page_icon=":angry:",
-    initial_sidebar_state="expanded",
+    initial_sidebar_state="auto",
 )
 
 @st.cache_resource
